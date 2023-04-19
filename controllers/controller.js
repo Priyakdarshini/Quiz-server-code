@@ -32,11 +32,13 @@ export async function dropQuestions(req,res){
 
 export async function getResult(req,res){
     try{
-       res.json({result : 'result'})
+    const r = await Result.find()
+    res.json(r)
     }catch(err){
         res.json({err})
     }
 }
+
 
 export async function storeResult(req,res){
     console.log(req.body)
